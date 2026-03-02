@@ -161,7 +161,7 @@ def admin_panel():
             quantity = get_valid_integer("Enter quantity: ")
 
             stock[new_id] = {"name": name, "price": price, "quantity": quantity}
-            print("✅ New item added successfully!")
+            print("New item added successfully!")
 
         elif choice == "2":
             display_items()
@@ -169,9 +169,9 @@ def admin_panel():
             if item_id in stock:
                 qty = get_valid_integer("Enter quantity to add: ")
                 stock[item_id]["quantity"] += qty
-                print("✅ Stock updated successfully!")
+                print("Stock updated successfully!")
             else:
-                print("❌ Invalid Item ID")
+                print("Invalid Item ID")
 
         elif choice == "3":
             display_items()
@@ -180,7 +180,7 @@ def admin_panel():
             break
 
         else:
-            print("❌ Invalid choice!")
+            print("Invalid choice!")
 
 
 # ---------------- MAIN PROGRAM ---------------- #
@@ -204,17 +204,17 @@ def main():
                 choice = get_valid_integer("Enter Item ID: ")
 
                 if choice not in stock:
-                    print("❌ Invalid Item ID!")
+                    print("Invalid Item ID!")
                     continue
 
                 qty = get_valid_integer("Enter Quantity: ")
 
                 if qty <= 0:
-                    print("❌ Quantity must be greater than 0.")
+                    print("Quantity must be greater than 0.")
                     continue
 
                 if qty > stock[choice]["quantity"]:
-                    print("❌ Out of Stock! Available:", stock[choice]["quantity"])
+                    print("Out of Stock! Available:", stock[choice]["quantity"])
                     continue
 
                 cart.append((stock[choice]["name"], stock[choice]["price"], qty))
@@ -234,7 +234,7 @@ def main():
             break
 
         else:
-            print("❌ Invalid choice!")
+            print("Invalid choice!")
 
 
 main()
